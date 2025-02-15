@@ -1,0 +1,32 @@
+<div id="accounts" class="accounts"> 
+  <div class="accounts-container">
+    <div class="table-container">
+      <div *ngIf="error" class="error">{{ error }}</div>
+      <table  *ngIf="stockData.length" class="table">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Ledger Name</th>
+            <th>Mobile No</th>
+            <th>Opening</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of stockData">
+            <td>{{ item.ID }}</td>
+            <td>{{ item.Party_Name }}</td>
+            <td>{{ item.Party_Mobile }}</td>
+            <td>{{ item.Opening }}</td>
+            <td>{{ item.Debit }}</td>
+            <td>{{ item.Credit }}</td>
+            <td>{{ item.Balance }}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  </div>    
+</div>
+

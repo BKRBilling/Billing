@@ -1,0 +1,147 @@
+.Receipt{
+    width: 100%;
+    border-radius: 1vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 8px;
+  }
+  
+  .Receipt-left
+  {
+    margin: 20px auto;
+    margin-left: 10px;
+    width: 28%;
+    float: left;
+    border-radius: 8px;
+  }
+  .container {
+    padding: 16px;
+    height: 81vh;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+  }
+  input[type=text], input[type=password] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  #Partyname {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  #Partyname {
+    /* background-color: #ddd; */
+    outline: none;
+  }
+  #ReceiptDate{
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: border 0.3s;
+    width: 95%;
+    height: 20px;
+    background-color: #f1f1f1;
+    }
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 15px;
+  }
+  .registerbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+  
+  a {
+    color: dodgerblue;
+  }
+  
+  .signin {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+  
+  /* -------------------------------------- */
+  .Receipt-right
+  {
+    width: 70%;
+    float: right;
+  }
+  .table-container {
+    height: 83vh;
+    width: 95%;
+    overflow: auto;    
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+    height: 3vh;
+  }
+  .table td{
+    height: 3vh;
+  }
+
+  th {
+    background-color: #057dcd;
+    color: white;
+    position: sticky; 
+    top: 0;
+    z-index: 1;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+  /* *************** scrollbar ***************** */
+  ::-webkit-scrollbar {
+    width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+    background: #057dcd; 
+    border-radius: 5px;
+    }
+    ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #ffffff; 
+    border-radius: 5px;
+    } 
+    ::-webkit-scrollbar-button {
+      border-radius: 5px;
+    }
+    

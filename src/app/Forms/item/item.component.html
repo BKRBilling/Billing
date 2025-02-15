@@ -1,0 +1,61 @@
+<div id="Item" class="Item">
+<div class="item-left"> 
+  <form (ngSubmit)="onSubmit()">
+    
+    <div class="container">
+      <h1>Item Creation</h1>
+      <hr>
+      <label for="ItemName"><b>Item Name</b></label>
+      <input type="text" placeholder="Enter Item Name" name="ItemName" id="ItemName" [(ngModel)]="ItemForm.ItemName" required>
+      
+      <label for="ItemGroup"><b>Item Group</b></label>
+      <select *ngIf="ItemGroup.length" name="ItemGroup" id="ItemGroup" [(ngModel)]="ItemForm.ItemGroup" required>
+        <option *ngFor="let group of ItemGroup" [value]="group.ItemGroup_Name">{{ group.ItemGroup_Name }}</option>
+      </select><br>
+
+      <label for="Unit"><b>Unit</b></label>
+      <select *ngIf="ItemUnit.length" name="Unit" id="Unit" [(ngModel)]="ItemForm.Unit" required>
+        <option *ngFor="let group of ItemUnit" [value]="group.ItemUnit_Name">{{ group.ItemUnit_Name }}</option>
+      </select><br>
+
+      <label for="PRate"><b>Purchase Rate</b></label>
+      <input type="text" placeholder="Enter Purchase Rate" name="PRate" id="PRate" [(ngModel)]="ItemForm.PRate">
+
+      <label for="SRate"><b>Sales Rate</b></label>
+      <input type="text" placeholder="Enter Sales Rate" name="SRate" id="SRate" [(ngModel)]="ItemForm.SRate">
+      <hr>
+      <button type="submit" class="registerbtn">Save</button>
+    </div>
+  </form>
+</div>
+<div class="item-right">
+
+    <div class="table-container">
+      <div *ngIf="error" class="error">{{ error }}</div>
+        <table  *ngIf="stockData.length" class="table">
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Item name</th>
+              <th>Item group</th>
+              <th>Unit</th>
+              <th>P.Rate</th>
+              <th>S.Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of stockData">
+              <td>{{ item.ID }}</td>
+              <td>{{ item.Itemname }}</td>
+              <td>{{ item.Itemgroup }}</td>
+              <td>{{ item.Unit }}</td>
+              <td>{{ item.prate }}</td>
+              <td>{{ item.srate }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+</div>
+</div>
+

@@ -1,0 +1,62 @@
+<div id="Master" class="Master">
+  <div class="Master-left">
+    <form (ngSubmit)="onSubmit()">
+      <div class="container">
+        <h1>Ledger Creation</h1>
+        <hr>
+        <label for="LedgerName"><b>Ledger Name</b></label>
+        <input type="text" placeholder="Enter Ledger Name" name="LedgerName" id="LedgerName" [(ngModel)]="ledgerForm.ledgerName" required>
+        
+        <label for="LedgerUnder"><b>Ledger Under</b></label>
+        <select *ngIf="ledgerGroup.length" name="LedgerUnder" id="LedgerUnder" [(ngModel)]="ledgerForm.ledgerUnder" required>
+          <option *ngFor="let group of ledgerGroup" [value]="group.ledgerGroup_Name">{{ group.ledgerGroup_Name }}</option>
+        </select><br>
+  
+        <label for="Address"><b>Address</b></label>
+        <input type="text" placeholder="Enter Address" name="Address" id="Address" [(ngModel)]="ledgerForm.address" required>
+  
+        <label for="MobileNo"><b>Mobile No</b></label>
+        <input type="text" placeholder="Enter Mobile No" name="MobileNo" id="MobileNo" [(ngModel)]="ledgerForm.mobileNo">
+  
+        <label for="OpeningBalance"><b>Opening Balance</b></label>
+        <input type="text" placeholder="Enter Opening Balance" name="OpeningBalance" id="OpeningBalance" [(ngModel)]="ledgerForm.openingBalance">
+        <hr>
+        <button type="submit" class="registerbtn">Save</button>
+      </div>
+    </form>
+  </div>
+  
+   <div class="Master-right">
+        
+        <div class="table-container">
+              <div *ngIf="error" class="error">{{ error }}</div>
+              <table  *ngIf="stockData.length" class="table">
+                  <thead>
+                    <tr>
+                      <th>S.No</th>
+                      <th>Ledger Name</th>
+                      <th>Ledger Under</th>
+                      <th>Address</th>
+                      <th>Mobile No</th>
+                      <th>Opening Balance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of stockData">
+                      <td>{{ item.ID }}</td>
+                      <td>{{ item.Partyname }}</td>
+                      <td>{{ item.under }}</td>
+                      <td>{{ item.Partyadd1 }} {{ item.Partyadd2 }} {{ item.Partyadd3 }}</td>
+                      <td>{{ item.Mobile }}</td>
+                      <td>{{ item.openingbal }}</td>
+                    </tr>                    
+                  </tbody>
+                </table>
+        </div>
+              
+   </div>
+</div>
+        
+        
+
+

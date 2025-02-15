@@ -1,0 +1,60 @@
+<div id="Receipt" class="Receipt">
+    <div class="Receipt-left">
+      <form (ngSubmit)="onSubmit()">
+        <div class="container">
+          <h1>Receipt Creation</h1>
+          <hr>
+          <label for="ReceiptDate">Receipt Date:</label>
+          <input id="ReceiptDate" type="date" [(ngModel)]="ReceiptForm.Receipt_Date" [value]="ReceiptForm.Receipt_Date" required/><br>
+
+          <label for="ReceiptBillNo">Receipt Bill No:</label>
+          <input id="ReceiptBillNo" type="text" [value]="ReceiptBillNo" readonly />
+          
+          <label for="Partyname">Ledger Name</label>
+          <select *ngIf="Partyname.length" name="Partyname" id="Partyname" [(ngModel)]="ReceiptForm.Partyname" (change)="onPartynameChange()" required>
+            <option *ngFor="let party of Partyname" [value]="party.Partyname">{{ party.Partyname }}</option>
+          </select><br>
+   
+          <label for="Balance">Balance Amount</label>
+          <input type="text" placeholder="Balance Amount" name="Balance" id="Balance" [(ngModel)]="ReceiptForm.Balance"  readonly>
+
+          <label for="AmountReceived">Received Amount</label>
+          <input type="text" placeholder="Enter Received Amount" name="AmountReceived" id="Receipt_Amount" [(ngModel)]="ReceiptForm.Receipt_Amount">
+
+          <hr>
+          <button type="submit" class="registerbtn">Save</button>
+        </div>
+      </form>
+    </div>
+     <div class="Receipt-right">   
+          <div class="table-container">
+                <div *ngIf="error" class="error">{{ error }}</div>
+                <table  *ngIf="ReceiptDisplay.length" class="table">
+                    <thead>
+                      <tr>
+                        <th>Receipt Date</th>
+                        <th>Receipt No</th>
+                        <th>Party Name</th>
+                        <th>Mobile No</th>
+                        <th>Receipt Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of ReceiptDisplay">
+                        <td>{{ item.Receipt_Date }}</td>
+                        <td>{{ item.Receipt_No }}</td>
+                        <td>{{ item.Partyname }}</td>
+                        <td>{{ item.Mobile }}</td>
+                        <td>{{ item.Receipt_Amount }}</td>
+                      </tr>                    
+                    </tbody>
+                  </table>
+          </div>
+                
+     </div>
+  </div>
+          
+          
+<!--   
+  [(ngModel)]="ledgerForm.Partyname" -->
+  

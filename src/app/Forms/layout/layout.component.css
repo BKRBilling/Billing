@@ -1,0 +1,147 @@
+.s-layout {
+  width: 100%;
+  border-radius: 1vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.Logout{
+    color: #ffffff;
+    text-decoration: none;
+    float: right;
+}
+.custom-toolbar{
+  background-color: #057dcd;
+}
+.mat-toolbar {
+  color: #f0f0f0 !important;
+}
+
+.mat-icon-button {
+  color: #f0f0f0 !important;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.mat-icon-button:hover {
+  box-shadow: 0px 0px 20px rgb(255, 255, 255);
+}
+
+.neumorphic-button {
+  color: white;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.neumorphic-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px #057dcd;
+}
+
+.neumorphic-button {
+  color: white !important;
+}
+
+/* Add some spacing between the buttons */
+.custom-toolbar button:not(:last-child) {
+  margin-right: 10px;
+}
+.fa-bars{
+  color: white;
+}
+
+/* Body Styling */
+body {
+  color: white !important;
+}
+
+/* Mat MDC Icon Button */
+.mat-mdc-icon-button {
+  color: white !important;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  background-color: #057dcd;
+  width: 120px;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  margin-top: 48px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.sidebar li a .menu-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.sidebar li a:hover {
+  background-color: rgb(241, 241, 241);
+  color: #057dcd;
+}
+
+.sidebar li a.active {
+  color: #057dcd;
+  background-color: rgb(241, 241, 241);
+}
+
+.sub-menu {
+  padding-left: 20px;
+}
+
+.hideSidebar {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.showSidebar {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.s-layout__content{
+  width: 100%;
+  height: 90vh;
+  margin-left: 180px;
+}
+/* Responsive side */
+.s-layout__content {
+  width: 100%;
+  height: 90vh;
+  transition: width 0.3s ease-in-out;
+}
+
+.content-with-sidebar {
+  width: calc(100% - 200px);
+}
+
+.content-without-sidebar {
+  margin-left: 0px;
+  width: 100%;
+}

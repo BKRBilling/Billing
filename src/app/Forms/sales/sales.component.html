@@ -1,0 +1,123 @@
+<div class="Sales">
+  <div class="container">
+    <form [formGroup]="salesForm">
+      <!-- Item Details -->
+      <div class="item-details">
+        <div id="itemdetails" class="form-row">
+          <label for="Items">Item Name:</label>
+          <input id="itemid" formControlName="itemid" type="text"/>
+          <select id="Items" formControlName="Items" (change)="onItemNameChange($event)">
+            <option value="">-- Select Item Name --</option>
+            <option *ngFor="let Item of itemNames" [value]="Item.Itemname">{{ Item.Itemname }}</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="qty">Quantity:</label>
+          <input id="qty" formControlName="qty" type="number" (input)="calculateAmount()" placeholder="Enter quantity" />
+        </div>
+        <div class="form-row">
+          <label for="rate">Rate:</label>
+          <input id="rate" formControlName="rate" type="number" (input)="calculateAmount()" placeholder="Enter rate" />
+        </div>
+        <div class="form-row">
+          <label for="amount">Amount:</label>
+          <input id="amount" formControlName="amount" type="number" placeholder="Amount" readonly />
+        </div>
+        <div class="form-row">
+          <label for="disAmount">Dis Amt:</label>
+          <input id="disAmount" formControlName="disAmount" type="number" (input)="calculateTotalAmount()" placeholder="Enter discount" />
+        </div>
+        <div class="form-row">
+          <label for="totalAmount">Total Amount:</label>
+          <input id="totalAmount" formControlName="totalAmount" type="number" placeholder="Total" readonly />
+        </div>
+        <button type="button" class="add-btn" (click)="addItem()">Add</button>
+      </div>
+     <!-- Invoice Details -->
+      <div class="Invoice-details">
+        <div class="form-row">
+          <label for="SalesBillNo">Sales Bill No:</label>
+          <input id="SalesBillNo" type="text" [value]="salesBillNo" readonly />
+        </div>
+
+        <div class="form-row">
+          <label for="InvoiceDate">Invoice Date:</label>
+          <input id="InvoiceDate" formControlName="InvoiceDate" type="date" />
+        </div>
+      </div>
+      <!-- Customer Details -->
+      <div class="customer-details">
+        <div class="form-row">
+          <label for="customerName">Customer Name:</label>
+          <input id="id" formControlName="id" type="text"/>
+          <select id="customerName" formControlName="customerName" (change)="CustomerNameChange($event)">
+            <option value="">-- Select Party Name --</option>
+            <option *ngFor="let party of partyNames" [value]="party.Partyname">{{ party.Partyname }}</option>
+          </select>
+        </div>
+        <!-- Address Fields -->
+        <div class="form-row">
+          <label for="address1">Address:</label>
+          <input id="address1" formControlName="address1" type="text" placeholder="Enter address 1" />
+        </div>
+        <div class="form-row">
+          <label for="address2">Address:</label>
+          <input id="address2" formControlName="address2" type="text" placeholder="Enter address 2" />
+        </div>
+        <div class="form-row">
+          <label for="address3">Address:</label>
+          <input id="address3" formControlName="address3" type="text" placeholder="Enter address 3" />
+        </div>
+        <div class="form-row">
+          <label for="mobile">Mobile:</label>
+          <input id="mobile" formControlName="mobile" type="text" placeholder="Enter mobile number" />
+        </div>
+      </div>
+      <!-- Table displaying added items -->
+      <div class="table-container">
+        <table class="item-table">
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Rate</th>
+              <th>Amount</th>
+              <th>Dis Amt</th>
+              <th>Total Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of addedItems; let i = index">
+              <td>{{ item.Items }}</td>
+              <td>{{ item.qty }}</td>
+              <td>{{ item.rate }}</td>
+              <td>{{ item.amount }}</td>
+              <td>{{ item.disAmount }}</td>
+              <td>{{ item.totalAmount }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Amount Details -->
+      <div Class="Amount-details">
+        <div class="form-row">
+          <label for="GrossAmount">Gross Amount</label>
+          <input id="GrossAmount" type="text" [value]="calculateGrossAmount()" readonly />
+        </div>
+        <div class="form-row">
+          <label for="DisAmount">Dis Amount</label>
+          <input id="DisAmount" type="text" [value]="calculateTotalDiscount()" readonly />
+        </div>
+        <div class="form-row">
+          <label for="TotalAmount">Total Amount</label>
+          <input id="TotalAmount" type="text" [value]="calculateNetAmount()" readonly />
+        </div>
+      </div>
+      <!-- Save and Clear Buttons -->
+      <div class="form-actions">
+        <button type="button" class="clear-btn" (click)="clearForm()">Clear</button>
+        <button type="submit" class="save-btn" (click)="onSubmit()">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

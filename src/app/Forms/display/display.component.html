@@ -1,0 +1,31 @@
+<div id="Display" class="Diplay">
+  <div class="Display-container">
+    <div class="table-container">
+      <div *ngIf="error" class="error">{{ error }}</div>
+        <table  *ngIf="stockData.length" class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Bill No</th>
+            <th>Party Name</th>
+            <th>Party mobile</th>
+            <th>Amount</th>
+            <th>Dis Amount</th>
+            <th>Total Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of stockData">
+            <td>{{ item.Bill_Date }}</td>
+            <td>{{ item.Bill_No }}</td>
+            <td>{{ item.Party_Name }}</td>
+            <td>{{ item.Party_Mobile }}</td>
+            <td>{{ item.Amount }}</td>
+            <td>{{ item.Dis_Amount }}</td>
+            <td>{{ item.Total_Amount }}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>      
+</div>

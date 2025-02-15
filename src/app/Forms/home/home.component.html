@@ -1,0 +1,98 @@
+<div id="Dashboard" class="Dashboard">
+    <div id="Chart" class="Chart">
+      <div id="TotalSales" class="TotalSales">
+        <div id="SalesFlowChart" class="sales-flow-chart">
+          <div class="flow-container">
+            <div class="flow-item" id="total-sales">
+              <h3>Total Sales</h3>
+              <p *ngIf="TotalSalesData && TotalSalesData[0]?.Total_Amount !== null">
+                Total Amount: {{ TotalSalesData[0]?.Total_Amount}}
+              </p>
+              <p *ngIf="!TotalSalesData || TotalSalesData[0]?.Total_Amount === null">
+                Loading Total Sales...
+              </p>
+            </div>
+            <div class="flow-item" id="total-receipt">
+              <h3 class="Receipttext">Total Receipt</h3>
+              <p *ngIf="TotalReceiptData && TotalReceiptData[0]?.Receipt_Amount !== null">
+                Total Amount: {{ TotalReceiptData[0]?.Receipt_Amount}}
+              </p>
+              <p *ngIf="!TotalReceiptData || TotalReceiptData[0]?.Receipt_Amount === null">
+                Loading Total Receipt...
+              </p>
+            </div>
+          </div>
+          <div class="Piechart">
+            <canvas #piecanvasTotal></canvas>
+          </div>
+        </div>
+      </div>
+      <div id="TotalReceipt" class="TotalReceipt">
+        <div id="ReceiptFlowChart" class="sales-flow-chart">
+          <div class="flow-container">
+            <div class="flow-item" id="today-sales">
+              <h3>Today's Sales</h3>
+              <p *ngIf="TodaySalesData && TodaySalesData[0]?.Today_Sales !== null">
+                Today's Amount: {{ TodaySalesData[0]?.Today_Sales}}
+              </p>
+              <p *ngIf="!TodaySalesData || TodaySalesData[0]?.Today_Sales === null">
+                Today's No Sales...
+              </p>
+            </div>
+            <div class="flow-item" id="today-receipt">
+              <h3 class="Receipttext">Today's Receipt</h3>
+              <p *ngIf="TodayReceiptData && TodayReceiptData[0]?.Today_Receipt !== null">
+                Today's Amount: {{ TodayReceiptData[0]?.Today_Receipt}}
+              </p>
+              <p *ngIf="!TodayReceiptData || TodayReceiptData[0]?.Today_Receipt === null">
+                Today's No Receipt...
+              </p>
+            </div>
+          </div>
+          <div class="PiechartToday">
+            <canvas #piecanvasToday></canvas>
+          </div>
+        </div>
+      </div>   
+    </div>
+    <div id="accounts" class="accounts"> 
+      <div class="table-container">
+        <div *ngIf="error" class="error">{{ error }}</div>
+        <table  *ngIf="DashboardoutstandingData.length" class="table">
+          <thead>
+            <tr>
+              <th>Ledger Name</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of DashboardoutstandingData">
+              <td>{{ item.Party_Name }}</td>
+              <td>{{ item.Balance }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>   
+    </div>
+    <div id="Invertory" class="Invertory">  
+    <div class="table-container">
+            <div *ngIf="error" class="error">{{ error }}</div>
+            <table  *ngIf="DashboardStockData.length" class="table">
+              <thead>
+                <tr>
+                  <th>Item Name</th>
+                  <th>Closing Stock</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of DashboardStockData">
+                  <td>{{ item.ItemName }}</td>
+                  <td>{{ item.TotalQty }}</td>
+                </tr>
+              </tbody>
+            </table>
+    </div>
+    </div>        
+</div>
+
+

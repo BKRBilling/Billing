@@ -1,0 +1,55 @@
+<div id="Stock" class="Stock">
+  <div class="Stock-left">
+    <form (ngSubmit)="onSubmit()">
+      <div class="container">
+        <h1>Stock Adjustment</h1>
+        <hr>
+        <label for="StockDate">Date:</label>
+        <input id="StockDate" type="date" [(ngModel)]="StockForm.Date" name="Stock_Date" [value]="StockForm.Date" required/><br>
+
+        <label for="StockBillNo">Stock Bill No:</label>
+        <input id="StockBillNo" type="text" [value]="AdjustmentBillno" readonly />
+        
+        <label for="ItemName">Item Name</label>
+        <select *ngIf="Itemname.length" name="ItemName" id="ItemName" [(ngModel)]="StockForm.ItemName" (change)="onItemnameChange()" required>
+          <option *ngFor="let item of Itemname" [value]="item.ItemName">{{ item.ItemName }}</option>
+        </select><br>
+   
+        <label for="AddQty">Add Qty</label>
+        <input type="text" placeholder="Enter Add Qty" name="AddQty" id="AddQty" [(ngModel)]="StockForm.AddQty">
+
+        <label for="LessQty">Less Qty</label>
+        <input type="text" placeholder="Enter Less Qty" name="LessQty" id="LessQty" [(ngModel)]="StockForm.LessQty">
+
+        <hr>
+        <button type="submit" class="registerbtn">Save</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="Stock-right">
+    <div class="table-container">
+      <div *ngIf="error" class="error">{{ error }}</div>
+      <table *ngIf="StockDisplay.length" class="table">
+        <thead>
+          <tr>
+            <th>Stock Date</th>
+            <th>Stock No</th>
+            <th>Item Name</th>
+            <th>Add Qty</th>
+            <th>Less Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of StockDisplay">
+            <td>{{ item.SA_Date }}</td>
+            <td>{{ item.Bill_no }}</td>
+            <td>{{ item.Itemname }}</td>
+            <td>{{ item.LessQty }}</td>
+            <td>{{ item.AddQty }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

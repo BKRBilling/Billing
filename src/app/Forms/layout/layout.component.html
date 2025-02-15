@@ -1,0 +1,65 @@
+<div class="s-layout">
+      <mat-toolbar class="custom-toolbar">
+         <button mat-icon-button class="neumorphic-button" class="example-icon" aria-label="Toggle Sidebar" (click)="toggleSidebar()">
+            <a class="s-sidebar__trigger" href="#0"> <i class="fa fa-bars"></i> </a>
+        </button>
+        <a class="Logout" [routerLink]="['']">
+         <i class="fas fa-sign-out-alt"></i><em>&nbsp;Log Out</em>
+      </a>
+      </mat-toolbar>
+
+  <div class="sidebar" [ngClass]="{ 'showSidebar': isSidebarVisible, 'hideSidebar': !isSidebarVisible }" [@fadeInOut]>
+   <ul>
+     <li>
+         <a class="s-sidebar__nav-link" [routerLink]="['Home']" routerLinkActive="active">
+            <i class="fa-solid fa-house"></i><em>&nbsp;Dashboard</em>
+       </a>
+     </li>
+     <li>
+      <a class="s-sidebar__nav-link" [routerLink]="['Sales']" routerLinkActive="active">
+         <i class="fa-solid fa-cart-shopping"></i><em>&nbsp;Sales</em>
+      </a>
+    </li>
+    <li>
+      <a class="s-sidebar__nav-link" [routerLink]="['Display']" routerLinkActive="active">
+         <i class="fa-solid fa-display"></i><em>&nbsp;Display</em>
+         </a>
+    </li>
+    <li>
+      <a class="s-sidebar__nav-link" [routerLink]="['Item']" routerLinkActive="active">
+         <i class="fa-solid fa-boxes-stacked"></i><em>&nbsp;Item</em>
+        </a>
+    </li>
+    <li>
+      <a class="s-sidebar__nav-link" [routerLink]="['Master']" routerLinkActive="active">
+         <i class="fa-solid fa-user-group"></i><em>&nbsp;Master</em>
+      </a>
+   </li>
+   <li>
+      <a class="s-sidebar__nav-link" [routerLink]="['Stock']" routerLinkActive="active">
+         <i class="fas fa-chart-bar"></i><em>&nbsp;Adjustment</em>
+   </a>
+   </li>
+      <li>
+      <a class="s-sidebar__nav-link" [routerLink]="['Invertory']" routerLinkActive="active">
+         <i class="fa-solid fa-warehouse"></i><em>&nbsp;Invertory</em>
+      </a>
+      </li>
+      <li>
+         <a class="s-sidebar__nav-link" [routerLink]="['Receipt']" routerLinkActive="active">
+            <i class="fas fa-receipt"></i><em>&nbsp;Receipt</em>
+      </a>
+      </li>
+      <li>
+      <a class="s-sidebar__nav-link" [routerLink]="['Accounts']" routerLinkActive="active">
+         <i class="fa-solid fa-book"></i><em>&nbsp;Accounts</em>
+      </a>
+      </li>
+   </ul>
+ </div>
+
+<main class="s-layout__content" [ngClass]="{ 'content-with-sidebar': isSidebarVisible, 'content-without-sidebar': !isSidebarVisible }">
+ <router-outlet></router-outlet>
+</main> 
+</div>
+
