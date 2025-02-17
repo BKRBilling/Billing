@@ -1,38 +1,6 @@
 <div class="Sales">
   <div class="container">
     <form [formGroup]="salesForm">
-      <!-- Item Details -->
-      <div class="item-details">
-        <div id="itemdetails" class="form-row">
-          <label for="Items">Item Name:</label>
-          <input id="itemid" formControlName="itemid" type="text"/>
-          <select id="Items" formControlName="Items" (change)="onItemNameChange($event)">
-            <option value="">-- Select Item Name --</option>
-            <option *ngFor="let Item of itemNames" [value]="Item.Itemname">{{ Item.Itemname }}</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="qty">Quantity:</label>
-          <input id="qty" formControlName="qty" type="number" (input)="calculateAmount()" placeholder="Enter quantity" />
-        </div>
-        <div class="form-row">
-          <label for="rate">Rate:</label>
-          <input id="rate" formControlName="rate" type="number" (input)="calculateAmount()" placeholder="Enter rate" />
-        </div>
-        <div class="form-row">
-          <label for="amount">Amount:</label>
-          <input id="amount" formControlName="amount" type="number" placeholder="Amount" readonly />
-        </div>
-        <div class="form-row">
-          <label for="disAmount">Dis Amt:</label>
-          <input id="disAmount" formControlName="disAmount" type="number" (input)="calculateTotalAmount()" placeholder="Enter discount" />
-        </div>
-        <div class="form-row">
-          <label for="totalAmount">Total Amount:</label>
-          <input id="totalAmount" formControlName="totalAmount" type="number" placeholder="Total" readonly />
-        </div>
-        <button type="button" class="add-btn" (click)="addItem()">Add</button>
-      </div>
      <!-- Invoice Details -->
       <div class="Invoice-details">
         <div class="form-row">
@@ -72,6 +40,38 @@
           <label for="mobile">Mobile:</label>
           <input id="mobile" formControlName="mobile" type="text" placeholder="Enter mobile number" />
         </div>
+      </div>
+      <!-- Item Details -->
+      <div class="item-details">
+        <div id="itemdetails" class="form-row">
+          <label for="Items">Item Name:</label>
+          <input id="itemid" formControlName="itemid" type="text"/>
+          <select id="Items" formControlName="Items" (change)="onItemNameChange($event)">
+            <option value="">-- Select Item Name --</option>
+            <option *ngFor="let Item of itemNames" [value]="Item.Itemname">{{ Item.Itemname }}</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="qty">Quantity:</label>
+          <input id="qty" formControlName="qty" type="number" (input)="calculateAmount()" placeholder="Enter quantity" />
+        </div>
+        <div class="form-row">
+          <label for="rate">Rate:</label>
+          <input id="rate" formControlName="rate" type="number" (input)="calculateAmount()" placeholder="Enter rate" />
+        </div>
+        <div class="form-row">
+          <label for="amount">Amount:</label>
+          <input id="amount" formControlName="amount" type="number" placeholder="Amount" readonly />
+        </div>
+        <div class="form-row">
+          <label for="disAmount">Dis Amt:</label>
+          <input id="disAmount" formControlName="disAmount" type="number" (input)="calculateTotalAmount()" placeholder="Enter discount" />
+        </div>
+        <div class="form-row">
+          <label for="totalAmount">Total Amount:</label>
+          <input id="totalAmount" formControlName="totalAmount" type="number" placeholder="Total" readonly />
+        </div>
+        <button type="button" class="add-btn" (click)="addItem()">Add</button>
       </div>
       <!-- Table displaying added items -->
       <div class="table-container">
