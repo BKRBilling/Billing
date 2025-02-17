@@ -7,32 +7,28 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SalesService {
-  
-  private SalesBillNoapiUrl = 'https://localhost:44345/api/SalesBillno'; 
-  private PartyNameApiurl = 'https://localhost:44345/api/SalesPartyName';
-  private SelectPartyName = 'https://localhost:44345/api/SelectPartyName';
-  private ItemNameApiurl = 'https://localhost:44345/api/SalesItemName';
-  private SelectItemName = 'https://localhost:44345/api/SelectItemName';
+
+  //private baseUrl = 'https://localhost:44345/api/';
+  private baseUrl = 'https://192.168.118.174:1495/api/';
 
   constructor(private http: HttpClient) {}
 
   getSalesBillNo(): Observable<any[]> {
-    return this.http.get<any[]>(this.SalesBillNoapiUrl);
+    return this.http.get<any[]>(`${this.baseUrl}SalesBillno`);
   }
   getPartyName(): Observable<any[]> {
-    return this.http.get<any[]>(this.PartyNameApiurl);
+    return this.http.get<any[]>(`${this.baseUrl}SalesPartyName`);
   }
   getPartyDetails(Partyname: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.SelectPartyName}/${Partyname}`);
-  }
-  getItemName(): Observable<any[]> {
-    return this.http.get<any[]>(this.ItemNameApiurl);
+    return this.http.get<any[]>(`${this.baseUrl}SelectPartyName/${Partyname}`);
   }
   getItemDetails(Itemname: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.SelectItemName}/${Itemname}`);
+    return this.http.get<any[]>(`${this.baseUrl}SelectItemName/${Itemname}`);
+  }
+  getItemName(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}SalesItemName`);
   }
   createSales(saleData: any): Observable<any> {
-    const SalesapiUrl = 'https://localhost:44345/api/createSales';
-    return this.http.post<any>(SalesapiUrl, saleData);
+    return this.http.post<any>(`${this.baseUrl}createSales`, saleData);
   }
 }
