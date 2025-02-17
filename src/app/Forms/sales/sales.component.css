@@ -1,403 +1,220 @@
-.sales{
-  width: 90%;
+.sales {
+  width: 95%;
   height: 80vh;
   border-radius: 1vh;
-  background-color:#D3D3D3;
+  background-color: #D3D3D3;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
-/* General container */
 .container {
-height: 80vh;
-margin: 10px;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-display: flex;
-flex: auto;
+  height: 80vh;
+  margin: 10px;
+  display: flex;
 }
-.customer-details {
+.customer-details, .item-details, .Invoice-details, .Amount-details {
   width: 95%;
-  height: 22vh;
-  padding: 15px;
   border-radius: 8px;
+}
+.customer-details, .item-details {
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  }
-  .customer-details .form-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .customer-details .form-row label {
-    width: 30%;
-  }
-  .customer-details .form-row input[readonly] {
-    background-color: #e0e0e0;
-    cursor: not-allowed;
-  }
-  .customer-details .form-row select, .form-row input {
-    width: 62%; 
-    padding: 6px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    outline: none;
-    background-color: #f1f1f1;
-  }
-  .item-details {
-    display: flex;
-    flex-direction: column;
-    height: 33vh;
-    width: 95%;
-    padding: 8px;
-    border-radius: 8px;
-    margin-top: 0vh;
-  }
-  .item-details .form-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .item-details .form-row label {
-    width: 30%;
-  }
-  .item-details .form-row input[readonly] {
-    background-color: #e0e0e0;
-    cursor: not-allowed;
-  }
-  .item-details .form-row select, .form-row input {
-    width: 62%;
-    padding: 6px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    outline: none;
-    background-color: #f1f1f1;
-  }
-  .Invoice-details
-  {
-  width: 95%;
-  height: 6vh;
-  padding: 16px;
-  /* background-color: rgb(0, 255, 191); */
-  border-radius: 8px;
+}
+.customer-details .form-row, .item-details .form-row {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  }
-  .Amount-details {
-    width: 93%;
-    height: 6vh;
-    padding: 5px;
-    border-radius: 8px;
-    /* background-color: rgb(0, 255, 191); */
-    float: left;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  #customerName {
-    width: 89%;
-    padding: 8px;
-    margin: 5px 0 10px 0;
-    border-radius: 8px;
-    border: none;
-    background: #f1f1f1;
-    outline: none;
-  }
-
-  input[type=text], input[type=password] {
-  width: 85%;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  border: none;
-  background: #f1f1f1;
-  }
-  input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-  }
-  #InvoiceDate{
-    padding: 6px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    outline: none;
-    transition: border 0.3s;
-    width: 80%;
-    height: 20px;
-    float: left;
-    }
-
-    #Items
-    {
-      width: 89%;
-    padding: 8px;
-    margin: 5px 0 10px 0;
-    border-radius: 8px;
-    border: none;
-    background: #f1f1f1;
-    outline: none;
-    }  
-    #itemdetails
-    {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .add-btn {
-      background-color: #28a745;
-      color: white;
-      width: 100%;
-      padding: 10px 0;
-      border-radius: 5px;
-      border: 0px;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-  
-  .add-btn:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-  }       
-  /* Clearfix to clear the floats */
-  .container::after {
-  content: "";
-  clear: both;
-  display: table;
-  }
-  /* Form Row */
-  .form-row {
-  margin-bottom: 5px;
-  }
-
-  input {
+}
+.customer-details .form-row label, .item-details .form-row label {
+  width: 45%;
+}
+.customer-details .form-row input[readonly], .item-details .form-row input[readonly] {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+.customer-details .form-row select, .form-row input, .item-details .form-row select, .form-row input {
+  width: 62%;
   padding: 6px;
   border-radius: 5px;
   border: 1px solid #ddd;
+  background-color: #f1f1f1;
+}
+.Invoice-details, .Amount-details {
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Amount-details {
+  float: left;
+}
+#customerName, #Items, #InvoiceDate {
+  width: 89%;
+  padding: 8px;
+  margin: 5px 0 10px;
+  border-radius: 8px;
+  background: #f1f1f1;
   outline: none;
-  transition: border 0.3s;
-  width: 30%;
-  display: inline-flex;
+}
+input[type=text], input[type=password] {
+  width: 85%;
+  padding: 10px;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+}
+.add-btn {
+  background-color: #28a745;
+  color: white;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.add-btn:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.form-row input {
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
   margin-right: 10px;
   margin-bottom: 5px;
-  }
-  input:focus {
+}
+input:focus {
   border: 1px solid #007bff;
-  }
-
-  /* Container for the table */
-  .table-container {
-    width: 100%;
-    height: 35vh;
-    overflow: hidden; 
-    border: 1px solid #ddd; 
-    border-radius: 8px;
-  }
-
-  /* Table styles */
-  .item-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #f4f4f9;
-  }
-
-  /* Header styles */
-  .item-table th {
-    background-color: #057dcd;
-    color: white;
-    padding: 5px;
-    text-align: left;
-    border: 1px solid #ddd;
-    position: sticky; 
-    top: 0;
-    z-index: 1;
-  }
-
-  /* Body styles */
-  .item-table tbody {
-    display: block;
-    height: calc(37vh - 40px);
-    overflow-y: auto;
-  }
-
-  .item-table tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-  }
-
-  .item-table td {
-    padding: 5px;
-    text-align: left;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    height: 3vh;
-  }
-
-  /* Adjust scrollbars */
-  .item-table tbody::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  .item-table tbody::-webkit-scrollbar-thumb {
-    background-color: #057dcd;
-    border-radius: 4px;
-  }
-
-  .item-table tbody::-webkit-scrollbar-track {
-    background-color: #f4f4f9;
-  }
-  .form-actions{
-    float: right;
-  }
-  /* Buttons */
-  button {
+}
+.table-container {
+  width: 100%;
+  height: 35vh;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.item-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f4f4f9;
+}
+.item-table th {
+  background-color: #057dcd;
+  color: white;
+  padding: 5px;
+  text-align: left;
+  border: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.item-table tbody {
+  display: block;
+  height: calc(37vh - 40px);
+  overflow-y: auto;
+}
+.item-table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.item-table td {
+  padding: 5px;
+  text-align: left;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  height: 3vh;
+}
+.item-table tbody::-webkit-scrollbar {
+  width: 8px;
+}
+.item-table tbody::-webkit-scrollbar-thumb {
+  background-color: #057dcd;
+  border-radius: 4px;
+}
+.item-table tbody::-webkit-scrollbar-track {
+  background-color: #f4f4f9;
+}
+.form-actions {
+  float: right;
+}
+button {
   padding: 10px 15px;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
-  }
-
-  button:hover {
+}
+button:hover {
   transform: translateY(-2px);
-  }
-
-  .save-btn {
+}
+.save-btn {
   background-color: #007bff;
   color: white;
   width: 180px;
   margin-top: 10px;
   margin-left: 10px;
-  border: 0px;
-  }
-
-  .save-btn:hover {
+  border: 0;
+}
+.save-btn:hover {
   background-color: #0056b3;
-  }
-
-  .clear-btn {
+}
+.clear-btn {
   background-color: #ffc107;
   color: white;
   width: 200px;
   margin-top: 10px;
-  border: 0px;
-  }
-
-  .clear-btn:hover {
+  border: 0;
+}
+.clear-btn:hover {
   background-color: #e0a800;
-  }
-
-  /* Item Row Styling */
-  .item-row {
+}
+.item-row {
   border: 1px solid #ddd;
   padding: 15px;
   margin-bottom: 10px;
   background-color: #fafafa;
   border-radius: 8px;
-  }
-  #itemid, #id{
-    display: none;
-  }
-
-  input[readonly] {
+}
+#itemid, #id {
+  display: none;
+}
+input[readonly] {
   background-color: #f1f1f1;
-  /* cursor: not-allowed; */
+}
+@media screen and (min-width: 480px) {
+  .customer-details, .item-details, .Invoice-details, .Amount-details {
+    width: 47%;
   }
-  /* Table styles */
-  .item-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #f4f4f9;
+  .customer-details, .item-details {
+    padding: 15px;
   }
-
-  /* Header styles */
-  .item-table th {
-    background-color: #057dcd;
-    color: white;
-    padding: 5px;
-    text-align: left;
-    border: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+  .customer-details {
+    float: left;
   }
-  @media screen and (min-width: 480px) {
-    .customer-details {
-      width: 47%;
-      height: 31vh;
-      padding: 15px;
-      /* background-color: rgb(0, 255, 191); */
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      float: left;
-      }
-      .item-details {
-        display: flex;
-        flex-direction: column;
-        height: 44vh;
-        width: 47%;
-        margin-top: -11vh;
-        padding: 8px;
-        border-radius: 8px;
-        /* background-color: rgb(0, 255, 191); */
-        float: right;
-      }
-      .Invoice-details
-      {
-      width: 47%;
-      height: 6vh;
-      padding: 16px;
-      /* background-color: rgb(0, 255, 191); */
-      border-radius: 8px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      }
-      .Amount-details {
-        width: 50%;
-        height: 6vh;
-        padding: 5px;
-        border-radius: 8px;
-        /* background-color: rgb(0, 255, 191); */
-        float: left;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-      #customerName {
-        width: 89%;
-        padding: 8px;
-        margin: 5px 0 10px 0;
-        border-radius: 8px;
-        border: none;
-        background: #f1f1f1;
-        outline: none;
-      }
-      #InvoiceDate{
-        padding: 6px;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        outline: none;
-        transition: border 0.3s;
-        width: 80%;
-        height: 20px;
-        float: left;
-        }
-        #Items
-        {
-          width: 89%;
-        padding: 8px;
-        margin: 5px 0 10px 0;
-        border-radius: 8px;
-        border: none;
-        background: #f1f1f1;
-        outline: none;
-        }
-      .save-btn {
-      width: 200px;
-      }
-      .clear-btn {
-      width: 200px;
-      }  
+  .item-details {
+    margin-top: -11vh;
+    float: right;
   }
+  .Invoice-details {
+    width: 47%;
+  }
+  .Amount-details {
+    width: 50%;
+  }
+  #customerName {
+    width: 89%;
+  }
+  #Items {
+    width: 89%;
+  }
+  .save-btn, .clear-btn {
+    width: 200px;
+  }
+}
