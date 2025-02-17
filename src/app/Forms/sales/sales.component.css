@@ -334,7 +334,6 @@ flex: auto;
   .item-table tbody::-webkit-scrollbar-track {
     background-color: #f4f4f9;
   }
-
   @media screen and (min-width: 480px) {
     .customer-details {
       width: 47%;
@@ -345,14 +344,6 @@ flex: auto;
       display: flex;
       flex-direction: column;
       float: left;
-      }
-      .customer-details .form-row select, .form-row input {
-        width: 60%; 
-        padding: 6px;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        outline: none;
-        background-color: #f1f1f1;
       }
       .item-details {
         display: flex;
@@ -396,7 +387,6 @@ flex: auto;
         background: #f1f1f1;
         outline: none;
       }
-    
       #InvoiceDate{
         padding: 6px;
         border-radius: 5px;
@@ -417,7 +407,15 @@ flex: auto;
         border: none;
         background: #f1f1f1;
         outline: none;
-        }  
+        }
+      /* Buttons */
+      button {
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      }
       .save-btn {
       background-color: #007bff;
       color: white;
@@ -426,7 +424,6 @@ flex: auto;
       margin-left: 10px;
       border: 0px;
       }
-    
       .clear-btn {
       background-color: #ffc107;
       color: white;
