@@ -336,22 +336,6 @@ flex: auto;
   }
 
   @media screen and (min-width: 480px) {
-    .sales{
-      width: 90%;
-      height: 80vh;
-      border-radius: 1vh;
-      background-color:#D3D3D3;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-    
-    /* General container */
-    .container {
-    height: 80vh;
-    margin: 10px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: flex;
-    flex: auto;
-    }
     .customer-details {
       width: 47%;
       height: 31vh;
@@ -361,18 +345,6 @@ flex: auto;
       display: flex;
       flex-direction: column;
       float: left;
-      }
-      .customer-details .form-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .customer-details .form-row label {
-        width: 30%;
-      }
-      .customer-details .form-row input[readonly] {
-        background-color: #e0e0e0;
-        cursor: not-allowed;
       }
       .customer-details .form-row select, .form-row input {
         width: 60%; 
@@ -392,26 +364,6 @@ flex: auto;
         border-radius: 8px;
         /* background-color: rgb(0, 255, 191); */
         float: right;
-      }
-      .item-details .form-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .item-details .form-row label {
-        width: 30%;
-      }
-      .item-details .form-row input[readonly] {
-        background-color: #e0e0e0;
-        cursor: not-allowed;
-      }
-      .item-details .form-row select, .form-row input {
-        width: 60%;
-        padding: 6px;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        outline: none;
-        background-color: #f1f1f1;
       }
       .Invoice-details
       {
@@ -466,13 +418,6 @@ flex: auto;
         background: #f1f1f1;
         outline: none;
         }  
-        #itemdetails
-        {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-        }
       .save-btn {
       background-color: #007bff;
       color: white;
@@ -488,18 +433,5 @@ flex: auto;
       width: 200px;
       margin-top: 10px;
       border: 0px;
-      }
-    
-      /* Header styles */
-      .item-table th {
-        background-color: #057dcd;
-        color: white;
-        padding: 5px;
-        text-align: left;
-        border: 1px solid #ddd;
-        position: sticky;
-        top: 0;
-        z-index: 1;
-      }
-    
+      }  
   }
