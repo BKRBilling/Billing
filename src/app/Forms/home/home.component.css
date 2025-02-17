@@ -2,39 +2,52 @@
   width: 100%;
   border-radius: 1vh;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 .accounts
 {
-  width: 30%;
+  width: 93%;
   margin: 10px 10px 10px 10px;
 }
 .Invertory
 {
-  width: 30%;
+  width: 93%;
   margin: 10px 10px 10px 10px;
 }
 .Chart{
-  height: 80vh;
-  width: 37%;
-  /* margin: 10px 0px 10px 10px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 30vh;
+  width: 90%;
+
 }
 .sales-flow-chart{
-  height: 39vh;
-  width: 350%;
+  height: 25vh;
+  width: 200%;
   overflow: auto;    
   padding: 10px;
   background-color: #f4f4f9;
   border-radius: 8px;
+  display: flex;
+  flex-direction: row;
 }
+  /* Piechart */
+  .Piechart, .PiechartToday{
+    width: 50%;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+  }
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+  .flow-container{
+    float: left;
+    width: 50%;
+  }
+    /* Piechart End */
 .table-container {
-    height: 85vh;
+  height: 40vh;
     width: 96%;
     overflow: auto;    
     padding: 10px;
@@ -65,12 +78,12 @@
   }
   .TotalSales
   {
-    width: 25%;
+    width: 50%;
     float: left;
     margin: 10px;
   }
   .TotalReceipt{
-    width: 25%;
+    width: 50%;
     float: left;
     margin: 10px;
   }
@@ -99,21 +112,126 @@ h3{
   ::-webkit-scrollbar-button {
     border-radius: 5px;
   }
-  /* Piechart */
-  .Piechart, .PiechartToday{
-    width: 50%;
-    height: 36.5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    float: right;
-  }
-  canvas {
-    max-width: 100%;
-    height: auto;
-  }
-  .flow-container{
-    float: left;
-    width: 50%;
-  }
+
   
+  @media screen and (min-width: 480px) {
+    .Dashboard {
+      width: 100%;
+      border-radius: 1vh;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .accounts
+    {
+      width: 30%;
+      margin: 10px 10px 10px 10px;
+    }
+    .Invertory
+    {
+      width: 30%;
+      margin: 10px 10px 10px 10px;
+    }
+    .Chart{
+      height: 80vh;
+      width: 37%;
+      /* margin: 10px 0px 10px 10px; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .sales-flow-chart{
+      height: 39vh;
+      width: 350%;
+      overflow: auto;    
+      padding: 10px;
+      background-color: #f4f4f9;
+      border-radius: 8px;
+    }
+    .table-container {
+        height: 85vh;
+        width: 96%;
+        overflow: auto;    
+        padding: 10px;
+        background-color: #f4f4f9;
+        border-radius: 8px;
+      }
+      table {
+        width: 96%;
+      }
+      
+      th, td {
+        padding: 5px;
+        text-align: center;
+      }
+      
+      th {
+        background-color: #057dcd;
+        color: white;
+        position: sticky; 
+        top: 0;
+        z-index: 1;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tr:hover {
+        background-color: #ddd;
+      }
+      .TotalSales
+      {
+        width: 25%;
+        float: left;
+        margin: 10px;
+      }
+      .TotalReceipt{
+        width: 25%;
+        float: left;
+        margin: 10px;
+      }
+    h3{
+      color: #057dcd;
+    }
+    .Receipttext{
+      color: #FF6361;
+    }
+    /* *************** scrollbar ***************** */
+    ::-webkit-scrollbar {
+      width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+      border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+      background: #057dcd; 
+      border-radius: 5px;
+      }
+      ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px #ffffff; 
+      border-radius: 5px;
+      } 
+      ::-webkit-scrollbar-button {
+        border-radius: 5px;
+      }
+      /* Piechart */
+      .Piechart, .PiechartToday{
+        width: 50%;
+        height: 36.5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        float: right;
+      }
+      canvas {
+        max-width: 100%;
+        height: auto;
+      }
+      .flow-container{
+        float: left;
+        width: 50%;
+      }
+      
+  }
