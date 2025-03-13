@@ -157,7 +157,7 @@ button:hover {
 .save-btn {
   background-color: #007bff;
   color: white;
-  width: 180px;
+  width: 170px;
   margin-top: 10px;
   margin-left: 10px;
   border: 0;
@@ -168,7 +168,7 @@ button:hover {
 .clear-btn {
   background-color: #ffc107;
   color: white;
-  width: 180px;
+  width: 170px;
   margin-top: 10px;
   border: 0;
 }
