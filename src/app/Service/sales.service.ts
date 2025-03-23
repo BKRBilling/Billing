@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 export class SalesService {
 
   //private baseUrl = 'https://localhost:44345/api/';
-  private baseUrl = 'https://192.168.185.174:1495/api/';
+  private baseUrl = 'https://192.168.28.174:1495/api/';
 
   constructor(private http: HttpClient) {}
 
