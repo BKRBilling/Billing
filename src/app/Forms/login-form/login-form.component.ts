@@ -17,7 +17,8 @@ export class LoginFormComponent {
   }
 
   onLogin() {
-    this.http.post('https://192.168.28.174:1495/api/Login', this.loginobj).subscribe(
+ 
+   this.http.post('https://192.168.28.174:1495/api/Login', this.loginobj).subscribe(
       (res: any) => {
         if (res.result) {
           alert('Login Success');
