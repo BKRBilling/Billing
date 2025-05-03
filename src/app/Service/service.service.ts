@@ -15,7 +15,7 @@ export class ServiceService {
       this.sidebarVisibilitySubject.next(!this.sidebarVisibilitySubject.value);
     }
 
-  private baseUrl = 'https://192.168.176.174:1495/api/';
+  private baseUrl = 'https://192.168.17.174:1495/api/';
 
   constructor(private http: HttpClient) {}
 
